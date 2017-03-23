@@ -1,0 +1,36 @@
+DROP TABLE IF EXISTS MasterDataset;
+CREATE EXTERNAL TABLE MasterDataset (textcol string) STORED AS TEXTFILE LOCATION '{0}';
+DROP TABLE IF EXISTS MeetupMessages; 
+CREATE EXTERNAL TABLE MeetupMessages
+(
+  json_body string
+)
+STORED AS TEXTFILE LOCATION '/a';
+INSERT OVERWRITE TABLE MeetupMessages 
+SELECT CONCAT_WS(' ', COLLECT_LIST(textcol)) AS singlelineJSON
+      FROM(SELECT INPUT__FILE__NAME, BLOCK__OFFSET__INSIDE__FILE, textcol FROM MasterDataset DISTRIBUTE BY INPUT__FILE__NAME SORT BY BLOCK__OFFSET__INSIDE__FILE) x
+      GROUP BY INPUT__FILE__NAME;
+
+DROP TABLE IF EXISTS Result;
+CREATE EXTERNAL TABLE Result (
+  aggTimestamp string,
+  count int
+)
+PARTITIONED BY (rsvp_id string, group_country string, group_city string) 
+STORED AS TEXTFILE 
+LOCATION '{2}';
+
+INSERT OVERWRITE TABLE Result 
+PARTITION (rsvp_id, group_country, group_city) 
+SELECT 
+'{1}' as aggTimestamp,
+Count(*) as count, 
+GET_JSON_OBJECT(MeetupMessages.json_body,'$.rsvp_id') as rsvp_id,
+GET_JSON_OBJECT(MeetupMessages.json_body,'$.group.group_country') as group_country,
+GET_JSON_OBJECT(MeetupMessages.json_body,'$.group.group_city') as group_city 
+FROM MeetupMessages 
+WHERE GET_JSON_OBJECT(MeetupMessages.json_body,'$.mtime') < {1} 
+GROUP BY 
+GET_JSON_OBJECT(MeetupMessages.json_body,'$.rsvp_id'),
+GET_JSON_OBJECT(MeetupMessages.json_body,'$.group.group_country'),
+GET_JSON_OBJECT(MeetupMessages.json_body,'$.group.group_city');

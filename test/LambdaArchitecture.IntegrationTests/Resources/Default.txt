@@ -1,0 +1,94 @@
+{
+  "venue": {
+    "venue_name": "Gates of Botanic Gardens, ",
+    "lon": -4.324862,
+    "lat": 55.889885,
+    "venue_id": 8380972
+  },
+  "visibility": "public",
+  "response": "yes",
+  "guests": 0,
+  "member": {
+    "member_id": 99341612,
+    "other_services": {
+      "twitter": {
+        "identifier": "lexjah"
+      },
+      "flickr": {
+        "identifier": "http://www.flickr.com/photos/lexjah"
+      },
+      "facebook": {
+        "identifier": "https://www.facebook.com/app_scoped_user_id/1597694518/"
+      }
+    },
+    "photo": "http://photos4.meetupstatic.com/photos/member/2/1/b/7/thumb_256508631.jpeg",
+    "member_name": "Alex Hamilton"
+  },
+  "rsvp_id": --id--,
+  "mtime": --timestamp--,
+  "event": {
+    "event_name": "Kilcreegan (WCV) ",
+    "event_id": "235579752",
+    "time": 1479373200000,
+    "event_url": "https://www.meetup.com/WestCoastVelo/events/235579752/"
+  },
+  "group": {
+    "group_topics": [
+      {
+        "urlkey": "social",
+        "topic_name": "Social"
+      },
+      {
+        "urlkey": "womens-cycling",
+        "topic_name": "womens cycling"
+      },
+      {
+        "urlkey": "road-cycling",
+        "topic_name": "Road Cycling"
+      },
+      {
+        "urlkey": "bike",
+        "topic_name": "Bicycling"
+      },
+      {
+        "urlkey": "outdoors",
+        "topic_name": "Outdoors"
+      },
+      {
+        "urlkey": "cycling",
+        "topic_name": "Cycling"
+      },
+      {
+        "urlkey": "mountain-biking",
+        "topic_name": "Mountain Biking"
+      },
+      {
+        "urlkey": "cycle-touring",
+        "topic_name": "cycle touring"
+      },
+      {
+        "urlkey": "mens-cycling",
+        "topic_name": "Mens Cycling"
+      },
+      {
+        "urlkey": "cycling-for-fitness",
+        "topic_name": "Cycling for Fitness"
+      },
+      {
+        "urlkey": "leisure-cycling",
+        "topic_name": "Leisure Cycling"
+      },
+      {
+        "urlkey": "long-distance-cycling",
+        "topic_name": "Long Distance Cycling"
+      }
+    ],
+    "group_city": "--city--",
+    "group_country": "--country--",
+    "group_id": 17051172,
+    "group_name": "West Coast Velo",
+    "group_lon": -4.27,
+    "group_urlname": "WestCoastVelo",
+    "group_lat": 55.86
+  }
+}

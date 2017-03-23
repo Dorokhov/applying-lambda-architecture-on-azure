@@ -1,0 +1,66 @@
+﻿{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterName": {
+      "value": "{0}"
+    },
+    "clusterLocation": {
+      "value": "{1}"
+    },
+    "computeLocation": {
+      "value": "{2}"
+    },
+    "adminUserName": {
+      "value": "{3}"
+    },
+    "adminPassword": {
+      "value": "{4}"
+    },
+    "nicName": {
+      "value": "{5}"
+    },
+    "publicIPAddressName": {
+      "value": "{6}"
+    },
+    "vmStorageAccountName": {
+      "value": "{7}"
+    },
+    "dnsName": {
+      "value": "{8}"
+    },
+    "virtualNetworkName": {
+      "value": "{9}"
+    },
+    "lbName": {
+      "value": "{10}"
+    },
+    "lbIPName": {
+      "value": "{11}"
+    },
+    "applicationDiagnosticsStorageAccountName": {
+      "value": "{12}"
+    },
+    "supportLogStorageAccountName": {
+      "value": "{13}"
+    },
+    "nt0ephemeralStartPort": {
+      "value": 49152
+    },
+    "nt0ephemeralEndPort": {
+      "value": 65534
+    },
+    "nt0applicationStartPort": {
+      "value": 20000
+    },
+    "nt0applicationEndPort": {
+      "value": 30000
+    },
+    "nt0fabricTcpGatewayPort": {
+      "value": 19000
+    },
+    "nt0fabricHttpGatewayPort": {
+      "value": 19080
+    }
+  }
+}
